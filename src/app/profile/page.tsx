@@ -1,9 +1,10 @@
 'use client'
+import { ThemeContext } from '@/lib/context/Provider'
 import { login } from '@/lib/store/features/auth/authSlice'
 import { useAppDispatch, useAppSelector } from '@/lib/store/hooks'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 
 const Profile = () => {
@@ -11,6 +12,10 @@ const Profile = () => {
     const [data, setData] = useState('')
     const auth = useAppSelector(state => state.auth)
     const dispatch = useAppDispatch()
+
+    const theme = useContext(ThemeContext)
+    console.log(theme)
+    console.log(auth)
 
     const getUser = async () => {
         try {

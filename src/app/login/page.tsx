@@ -1,11 +1,13 @@
 'use client'
+import { ThemeContext } from "@/lib/context/Provider"
 import axios from "axios"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { toast } from "react-toastify"
 
 export default function Login() {
-
+    const theme = useContext(ThemeContext)
+    console.log(theme)
     const [user, setUser] = useState({
         email: '', password: ''
     })
