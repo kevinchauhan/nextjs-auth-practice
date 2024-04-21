@@ -40,7 +40,7 @@ const Profile = () => {
     }
     return (
         <div>
-            <h1>Profile Page</h1>
+            <h1> <i className="fa-solid fa-user"></i> Profile Page</h1>
             <h2>{data}</h2>
             <button onClick={logout}>Logout</button>
         </div>
